@@ -1,0 +1,176 @@
+body{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    min-height: 70px;
+    background-color: rgb(218, 215, 215);
+    justify-content: space-between;
+    margin: 0%;
+    font-family:'Cormorant Garamond', serif;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+}
+
+#tit-table{
+    font-size: 30px;
+}
+
+
+#titulo{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 70px;
+    margin: 0;
+    
+    
+}
+#logo{
+    display: flex;
+    height: 100px;
+    margin-left: 40px;
+}
+#info{
+    display: flex;
+    padding: 25px;
+    
+}
+
+#mes{
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    padding-left: 300px;
+    padding-top: 37px;
+    table-layout: fixed;
+    
+}
+td,tr{
+    padding: 10px;
+    
+}
+
+.falta{
+    color: gray;
+}
+
+#fecha{
+    color: red;
+    text-decoration: line-through;
+}
+
+
+#pro{
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+#con{
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+#video{
+    height: 650px;
+}
+#vid-c{
+    display: flex;
+    
+}
+#txt-m-1{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    margin-left: 15px;
+    
+}
+hr{
+    margin: 0;
+    padding: 0;
+}
+
+#txt-m-2{
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-size: 40px;
+    text-decoration: underline;
+    text-underline-offset:10px ;
+    padding-top: 20px;
+
+}
+
+#articles{
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    gap: 30px;
+    place-content: center;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#prod{
+    height: 400px;
+    place-content: center;
+}
+
+
+#formulario{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 5px;       
+}
+
+#form{
+    padding: 0;
+}
+
+.inpt{
+      border-style: none; 
+}
+
+#footer{
+    display: grid;
+    grid-template-columns: 300px 500px;
+    gap: 20px;
+    padding-top: 10px;
+    place-content: center;
+    background-color:rgb(218, 215, 215);
+    font-size: 30px;
+}
+
+#redes{
+    font-style: italic;
+    color: black;
+}
+
+#tit-prod{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#links{
+    display: grid;
+    grid-template-columns: 25px 100px;
+    gap: 20px;
+    /* grid-template-rows: 25px 100px; */
+}
+
+#logo-redes{
+    height: 25px;
+}
+
+/* @media screen (min-width 320px) and (max-width) {
+    
+} */
+
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}

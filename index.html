@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP | A DOMANI</title>
+    <link rel="icon" href="disen/ad-PhotoRoom.png-PhotoRoom.png" type="image">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Nunito:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<script>
+
+window.addEventListener("DOMContentLoaded", () => {
+    const today = new Date();
+    const dia = today.getDate();
+    const celdas = document.querySelectorAll("#mes td");
+
+    celdas.forEach(td => {
+        if (td.textContent == dia && !td.classList.contains("falta")) {
+            td.style.backgroundColor = "yellow";
+            td.style.fontWeight = "bold";
+            td.title = "Hoy";
+        }
+    });
+
+    
+    const cantProductos = document.querySelectorAll("#articles article").length;
+    document.getElementById("txt-m-2").innerHTML += ` <span style="font-size:20px;">(${cantProductos} artículos)</span>`;
+});
+
+
+function filtrarProductos() {
+    const filtro = document.getElementById("buscador").value.toLowerCase();
+    const productos = document.querySelectorAll("#articles article");
+
+    productos.forEach(prod => {
+        const nombre = prod.querySelector("a").textContent.toLowerCase();
+        prod.style.display = nombre.includes(filtro) ? "" : "none";
+    });
+}
+
+
+function verificarformulario() {
+    var nombre = document.getElementById('nombre').value.trim();
+    var apellido = document.getElementById('apellido').value.trim();
+    var numero = document.getElementById('celular').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    const mensaje = document.createElement("p");
+    mensaje.style.marginTop = "10px";
+
+    
+    document.querySelectorAll("#form p.alerta").forEach(e => e.remove());
+
+    if (!nombre || !apellido || !numero || !email) {
+        mensaje.textContent = "⚠️ Por favor, complete todos los campos.";
+        mensaje.style.color = "red";
+        mensaje.classList.add("alerta");
+        document.getElementById("form").appendChild(mensaje);
+    } else {
+        mensaje.textContent = "✅ ¡Su suscripción se ha realizado con éxito!";
+        mensaje.style.color = "green";
+        mensaje.classList.add("alerta");
+        document.getElementById("form").appendChild(mensaje);
+        document.getElementById("formulario").reset();
+    }
+}
+
+function proximamente(){
+    alert("Próximamente Disponible!! Suscribite al NEWS LETTER para más info.");
+}
+</script>
+
+
+<body>
+    <header class="header">
+        <div id="logo"> <img src="disen/DIS monalisa.png" alt=""></div>
+        <h2 id="titulo"> A DOMANI </h2>
+        <div id="info">
+            <a id="pro" href="#articles">Productos</a>
+            <a id="con" href="#form">Contacto</a>
+        </div>
+    </header>
+    <main class="content">
+        <div id="vid-c">
+            <video id="video" src="disen/A DOMANI.mp4"  autoplay muted  loop ></video>
+            <div id="txt-m-1">
+                <h1>NEWS</h1>
+                <h4>¡La espera está por terminar! En solo unos meses, nuestra marca de ropa <br>lanzará su primera colección. Prepárense para descubrir un nuevo nivel <br>de estilo y elegancia. ¡Estén atentos para conocer más detalles y no se pierdan esta <br>emocionante novedad!</h4>
+                <a onclick="proximamente()" href="#form">Mas Info!!</a>
+            </div>
+            <div>
+                
+                <table id="mes">
+                    <tr>
+                        <td id="tit-table" colspan="7" >APERTURA ESTIMADA</td>
+                    </tr>
+                    <tr >
+                        <td colspan="7">OCTUBRE</td>
+                    </tr>
+                    <tr>
+                        <td>LU</td>
+                        <td>MA</td>
+                        <td>MI</td>
+                        <td>JU</td>
+                        <td>VI</td>
+                        <td>SA</td>
+                        <td>DO</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td>01</td>
+                        <td>02</td>
+                        <td>03</td>
+                        <td>04</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>06</td>
+                        <td id="fecha">07</td>
+                        <td class="falta">08</td>
+                        <td class="falta">09</td>
+                        <td class="falta">10</td>
+                        <td class="falta">11</td>
+                    </tr>
+                    <tr class="falta">
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    
+                    <tr class="falta">
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    
+                    <tr class="falta">
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>01</td>
+                        <td>02</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <hr>
+        <h1 id="txt-m-2"> PRODUCTOS</h1>
+        <input type="text" id="buscador" placeholder="Buscar producto..." oninput="filtrarProductos()" style="display:block;margin:10px auto;padding:5px;width:300px;">
+
+        <section id="articles">
+            <article>
+                <img id="prod" src="disen/0AD22F53-A41D-44E4-8CDD-E1C9636FAE32.jpg" alt="">
+                <a id="tit-prod" onclick="proximamente()" href="#form">BORCEGOS BLANCOS</a>
+                <p>$45000</p>
+            </article>
+            <article>
+                <img id="prod" src="disen/3-4-scaled-scaled.jpg" alt="">
+                <a id="tit-prod" onclick="proximamente()" href="#form">CAMPERA JEAN AZUL</a>
+                <p>$24999</p>
+            </article>
+            <article>
+                <img id="prod" src="disen/820F3D86-37FA-4CFB-8B1D-18DBC61FD827-scaled.jpg" alt="">
+                <a id="tit-prod" onclick="proximamente()" href="#form">JOGGIN GRIS</a>
+                <p>$12000</p>
+            </article>
+            <article>
+                <img id="prod" src="disen/AE12FB0C-7FD3-4833-A4ED-96048B220666-scaled.jpg" alt="">
+                <a id="tit-prod" onclick="proximamente()" href="#form">BUZO MARRON</a>
+                <p>$16999</p>
+            </article>
+            <article>
+                <img id="prod" src="disen/Productos-Febrero-4-scaled-scaled.jpg" alt="">
+                <a id="tit-prod" onclick="proximamente()" href="#form">SHORT BLANCO</a>
+                <p>$8000</p>
+            </article>
+            <article>
+                <img id="prod" src="disen/Productos-Mayo-23-12-scaled.jpg" alt="">
+                <a id="tit-prod" onclick="proximamente()" href="#form">REMERA AZUL OVERSIZE</a>
+                <p>$7500</p>
+            </article>
+        </section>
+        <footer id="footer">
+            <div>
+                <p>Redes</p>
+                <div id="links">  
+                    <img id="logo-redes" src="disen/instagram.svg" alt="">
+                    <a id="redes" href="https://www.instagram.com/">Instagram</a>
+                    <img id="logo-redes" src="disen/whatsapp.svg" alt="">
+                    <a id="redes" href="https://web.whatsapp.com/">Whatsapp</a>
+                    <img id="logo-redes" src="disen/tiktok.svg" alt="">
+                    <a id="redes" href="https://www.tiktok.com/es/">TikTok</a>
+                </div>
+            </div>
+
+            <div id="form">
+                <p>NEWS LETTER <br> Enterate de las novedades, lanzamientos y descuentos!!</p>
+                <form id="formulario">
+                    <input class="inpt" id="nombre" placeholder="Nombre" type="text" required>
+                    <input class="inpt" id="apellido" placeholder="Apellido" type="text" required>
+                    <input class="inpt" id="celular" placeholder="Número Celular" type="text" required>
+                    <input class="inpt" id="email" placeholder="Email" type="email" required>
+                </form>
+                <button onclick="verificarformulario()">Enviar</button>
+            </div>
+            <div></div>
+
+        </footer>
+    </main>
+
+</body>
+</html>
